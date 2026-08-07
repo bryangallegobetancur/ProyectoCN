@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipeline Serverless de Ingesta y Validación - Proyecto Cloud</title>
+    <meta name="description" content="Proyecto académico ABP para la materia Seguridad y Computación en la Nube. Pipeline serverless robusto en la nube para ingesta, validación y alertas automáticas.">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo" id="main-logo">
+                <span class="logo-icon"></span>
+                <span>ServerlessPipeline</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#problema">El Problema</a></li>
+                <li><a href="#arquitectura">Arquitectura</a></li>
+                <li><a href="#simulador">Simulador Demo</a></li>
+                <li><a href="README.md" target="_blank">Documentación</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <span class="hero-badge">Proyecto Académico ABP - Seguridad y Computación en la Nube</span>
+            <h1>Pipeline Serverless de Ingesta, Validación y Alertas de Datos</h1>
+            <p>Una arquitectura elástica y segura en la nube para procesar, validar e identificar anomalías en tiempo real sobre ingestas masivas de datos.</p>
+            <div class="btn-group">
+                <a href="#simulador" class="btn btn-primary" id="btn-demo-scroll">
+                    <i class="fa-solid fa-play"></i> Probar Simulación
+                </a>
+                <a href="https://github.com" class="btn btn-secondary" target="_blank" id="btn-github-link">
+                    <i class="fa-brands fa-github"></i> Ver en GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección El Problema -->
+    <section class="problem" id="problema">
+        <div class="container">
+            <h2>El Problema de Negocio</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-card-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <h3>Procesamiento Manual y Lento</h3>
+                    <p>Las organizaciones suelen procesar reportes de transacciones mediante scripts manuales o procesos batch nocturnos, provocando cuellos de botella y retrasos críticos en la toma de decisiones.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-card-icon">
+                        <i class="fa-solid fa-bug"></i>
+                    </div>
+                    <h3>Inconsistencia y Errores de Datos</h3>
+                    <p>Los archivos CSV generados por fuentes externas contienen anomalías frecuentes: campos vacíos, montos negativos o formatos incorrectos que contaminan las bases de datos de producción.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-card-icon">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <h3>Falta de Visibilidad y Alertas</h3>
+                    <p>Ante una falla crítica o una anomalía sospechosa en los datos ingresados, los equipos técnicos tardan horas o días en enterarse debido a la ausencia de sistemas de notificación reactivos en tiempo real.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Arquitectura Cloud -->
+    <section class="architecture" id="arquitectura">
+        <div class="container">
+            <h2>Arquitectura Cloud Propuesta</h2>
+            <div class="architecture-content">
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">
+                    Implementamos un flujo 100% Serverless utilizando servicios administrados para garantizar alta disponibilidad, auto-escalabilidad y optimización de costos mediante pago por uso.
+                </p>
+                
+                <!-- Diagrama visual simplificado -->
+                <div class="arch-diagram">
+                    <div class="arch-step">
+                        <div class="arch-icon-wrapper">
+                            <i class="fa-solid fa-file-csv"></i>
+                        </div>
+                        <h4>1. Ingesta (S3)</h4>
+                        <p>Carga de archivos CSV a un bucket seguro de almacenamiento de objetos.</p>
+                    </div>
+                    
+                    <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    
+                    <div class="arch-step">
+                        <div class="arch-icon-wrapper">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h4>2. Cómputo (Lambda)</h4>
+                        <p>Procesamiento rápido y validaciones lógicas con código Python.</p>
+                    </div>
+                    
+                    <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    
+                    <div class="arch-step">
+                        <div class="arch-icon-wrapper">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <h4>3. Almacén (DynamoDB)</h4>
+                        <p>Persistencia no relacional de registros limpios con baja latencia.</p>
+                    </div>
+                    
+                    <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    
+                    <div class="arch-step">
+                        <div class="arch-icon-wrapper">
+                            <i class="fa-solid fa-envelope-open-text"></i>
+                        </div>
+                        <h4>4. Alertas (SNS)</h4>
+                        <p>Notificaciones push y correos ante la detección de cualquier anomalía.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Demo / Simulador Interactivo -->
+    <section class="demo" id="simulador">
+        <div class="container">
+            <h2>Simulador de Pipeline Serverless</h2>
+            <p style="text-align: center; max-width: 800px; margin: -1.5rem auto 3rem;">
+                Modifica el CSV a continuación o haz clic en "Iniciar Simulación" para ver cómo la función Lambda procesa, valida y notifica los resultados de forma dinámica.
+            </p>
+
+            <div class="demo-layout">
+                <!-- Panel de Entrada de Datos -->
+                <div class="demo-input-panel">
+                    <div class="panel-header">
+                        <span class="panel-title"><i class="fa-solid fa-file-import"></i> Entrada de Datos (CSV)</span>
+                        <button class="btn btn-secondary" id="btn-load-sample" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
+                            <i class="fa-solid fa-arrow-rotate-left"></i> Cargar CSV de Prueba
+                        </button>
+                    </div>
+                    
+                    <div class="textarea-container">
+                        <textarea id="csv-input" spellcheck="false" placeholder="Ingresa datos delimitados por comas..."></textarea>
+                    </div>
+                    
+                    <button class="btn btn-primary" id="btn-run-simulation" style="width: 100%; justify-content: center;">
+                        <i class="fa-solid fa-circle-play"></i> Iniciar Simulación de Pipeline
+                    </button>
+                </div>
+
+                <!-- Panel de Resultados / Logs de Salida -->
+                <div class="demo-output-panel">
+                    <div class="panel-header">
+                        <span class="panel-title"><i class="fa-solid fa-square-poll-horizontal"></i> Resultados del Pipeline</span>
+                    </div>
+
+                    <!-- Indicadores de Estado -->
+                    <div class="status-grid">
+                        <div class="status-counter processed">
+                            <div class="counter-num" id="count-total">0</div>
+                            <div class="counter-label">Registros</div>
+                        </div>
+                        <div class="status-counter valid">
+                            <div class="counter-num" id="count-valid" style="color: var(--success);">0</div>
+                            <div class="counter-label">Válidos</div>
+                        </div>
+                        <div class="status-counter anomalies">
+                            <div class="counter-num" id="count-anomalies" style="color: var(--danger);">0</div>
+                            <div class="counter-label">Anomalías</div>
+                        </div>
+                    </div>
+
+                    <!-- Alerta SNS Notificando al equipo -->
+                    <div class="sns-alert" id="sns-notifier">
+                        <div class="sns-alert-icon">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <div class="sns-alert-text">
+                            <h5>¡Alerta SNS Emitida!</h5>
+                            <p id="sns-alert-desc">Se han detectado anomalías y se ha enviado una notificación de alerta al equipo de Seguridad Cloud.</p>
+                        </div>
+                    </div>
+
+                    <!-- Contenedor de Tabs -->
+                    <div class="results-tabs">
+                        <button class="tab-btn active" id="tab-table">Tabla de Ejecución</button>
+                        <button class="tab-btn" id="tab-json">Respuesta de la Lambda (JSON)</button>
+                    </div>
+
+                    <!-- Contenido de las Pestañas -->
+                    <div class="tab-content">
+                        <!-- Pestaña de Tabla -->
+                        <div id="content-table" class="table-wrapper">
+                            <table id="simulation-table">
+                                <thead>
+                                    <tr>
+                                        <th>Fila</th>
+                                        <th>ID Transacción</th>
+                                        <th>Cliente</th>
+                                        <th>Monto</th>
+                                        <th>Fecha</th>
+                                        <th>Estado / Detalle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="6" style="text-align: center; color: var(--text-muted);">
+                                            Haz clic en "Iniciar Simulación" para ver la validación por fila.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Pestaña de JSON -->
+                        <div id="content-json" style="display: none;">
+                            <pre><code id="json-output">// La respuesta JSON estructurada de la función Lambda aparecerá aquí una vez ejecutada la simulación.</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>ServerlessPipeline</h3>
+                    <p>Solución segura, escalable y robusta para ingesta e inspección automatizada de transacciones comerciales.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Materia</h4>
+                    <p style="color: #94a3b8; font-size: 0.95rem;">Seguridad y Computación en la Nube</p>
+                    <p style="color: #94a3b8; font-size: 0.95rem; margin-top: 0.5rem;">Aprendizaje Basado en Problemas (ABP)</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Integrantes del Equipo</h4>
+                    <ul style="color: #94a3b8; font-size: 0.95rem; line-height: 1.8;">
+                        <li><i class="fa-solid fa-user-graduate"></i> Estudiante Académico 1</li>
+                        <li><i class="fa-solid fa-user-graduate"></i> Estudiante Académico 2</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Proyecto ABP. Desarrollado con fines educativos y de investigación en Cloud Computing.</p>
+                <p>
+                    <a href="https://github.com" target="_blank" style="color: #94a3b8; text-decoration: none; font-size: 1.25rem;">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lógica interactiva en JS -->
+    <script src="script.js"></script>
+</body>
+</html>

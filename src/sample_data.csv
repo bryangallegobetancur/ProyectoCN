@@ -1,0 +1,11 @@
+id_transaccion,cliente,monto,fecha
+TX-1001,Juan Perez,150.50,2026-08-01
+TX-1002,Maria Gomez,3200.00,2026-08-02
+TX-1003,Carlos Soto,75.25,2026-08-02
+,Ana Lopez,450.00,2026-08-03
+TX-1005,Luis Martinez,120.00,2026-08-03
+TX-1006,Sofia Rodriguez,980.10,2026-08-04
+TX-1007,Diego Sanchez,-50.00,2026-08-04
+TX-1008,Elena Vazquez,620.40,2026-08-05
+TX-1009,Javier Diaz,110.00,05/08/2026
+TX-1010,Patricia Ruiz,340.85,2026-08-06
