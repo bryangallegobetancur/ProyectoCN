@@ -4,11 +4,10 @@ Este proyecto fue desarrollado bajo la metodología de **Aprendizaje Basado en P
 
 ---
 
-## 👥 Integrantes del Equipo
+## 👥 Integrante del Equipo
 | Nombre | Rol / Especialidad | GitHub |
 | :--- | :--- | :--- |
-| **Estudiante Académico 1** | Cloud Engineer | [@github-user1](#) |
-| **Estudiante Académico 2** | Full-Stack Developer | [@github-user2](#) |
+| **Bryan Stiven Gallego Betancur** | Data Engineer / AI Engineer | [@bryangallegobetancur](https://github.com/bryangallegobetancur) |
 
 ---
 
